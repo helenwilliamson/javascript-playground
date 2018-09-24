@@ -1,5 +1,21 @@
-const sum = require('../src/index')
+const fizzbuzz = require('../src/index')
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
-});
+test.each([
+  [1, '1'],
+  [2, '2'],
+  [3, 'Fizz'],
+  [4, '4'],
+  [5, 'Buzz'],
+  [6, 'Fizz'],
+  [7, '7'],
+  [8, '8'],
+  [9, 'Fizz'],
+  [10, 'Buzz'],
+  [11, '11'],
+  [12, 'Fizz'],
+  [13, '13'],
+  [14, '14'],
+  [15, 'FizzBuzz']
+])('for %i, prints %p', (number, expected) => {
+  expect(fizzbuzz(number)).toBe(expected)
+})
